@@ -4,6 +4,8 @@ import br.edu.imepac.message.manager.entities.Contact;
 import br.edu.imepac.message.manager.views.contacts.ContactAddForm;
 import br.edu.imepac.message.manager.views.contacts.ContactListForm;
 import br.edu.imepac.message.manager.views.contacts.ContactUpdateForm;
+import br.edu.imepac.message.manager.views.messages.MessageListForm;
+import br.edu.imepac.message.manager.views.messages.MessageSendForm;
 
 public class MainDesktop extends javax.swing.JFrame {
 
@@ -28,9 +30,9 @@ public class MainDesktop extends javax.swing.JFrame {
         contactsMenu = new javax.swing.JMenu();
         contactListMenu = new javax.swing.JMenuItem();
         contactAddMenu = new javax.swing.JMenuItem();
-        helpMenu = new javax.swing.JMenu();
-        contentMenuItem = new javax.swing.JMenuItem();
-        aboutMenuItem = new javax.swing.JMenuItem();
+        messageMenu = new javax.swing.JMenu();
+        messageListMenu = new javax.swing.JMenuItem();
+        messageSendMenu = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -61,23 +63,33 @@ public class MainDesktop extends javax.swing.JFrame {
 
         menuBar.add(contactsMenu);
 
-        helpMenu.setMnemonic('h');
-        helpMenu.setText("Mensagens");
-
-        contentMenuItem.setMnemonic('c');
-        contentMenuItem.setText("Listagem");
-        helpMenu.add(contentMenuItem);
-
-        aboutMenuItem.setMnemonic('a');
-        aboutMenuItem.setText("Adicionar");
-        aboutMenuItem.addActionListener(new java.awt.event.ActionListener() {
+        messageMenu.setMnemonic('h');
+        messageMenu.setText("Mensagens");
+        messageMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aboutMenuItemActionPerformed(evt);
+                messageMenuActionPerformed(evt);
             }
         });
-        helpMenu.add(aboutMenuItem);
 
-        menuBar.add(helpMenu);
+        messageListMenu.setMnemonic('c');
+        messageListMenu.setText("Listagem");
+        messageListMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                messageListMenuActionPerformed(evt);
+            }
+        });
+        messageMenu.add(messageListMenu);
+
+        messageSendMenu.setMnemonic('a');
+        messageSendMenu.setText("Adicionar");
+        messageSendMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                messageSendMenuActionPerformed(evt);
+            }
+        });
+        messageMenu.add(messageSendMenu);
+
+        menuBar.add(messageMenu);
 
         jMenu1.setText("Sair");
         menuBar.add(jMenu1);
@@ -88,19 +100,24 @@ public class MainDesktop extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1017, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 660, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void aboutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutMenuItemActionPerformed
+    private void messageSendMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messageSendMenuActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_aboutMenuItemActionPerformed
+        MessageSendForm messageSend = new MessageSendForm();
+        desktopPane.add(messageSend);
+        messageSend.pack();
+        messageSend.setVisible(true);
+        
+    }//GEN-LAST:event_messageSendMenuActionPerformed
 
     private void contactAddMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactAddMenuActionPerformed
         ContactAddForm contactAdd = new ContactAddForm();
@@ -116,6 +133,18 @@ public class MainDesktop extends javax.swing.JFrame {
         contactListForm.pack();
         contactListForm.setVisible(true);
     }//GEN-LAST:event_contactListMenuActionPerformed
+
+    private void messageListMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messageListMenuActionPerformed
+        // TODO add your handling code here:
+        MessageListForm messageListForm = new MessageListForm();
+        desktopPane.add(messageListForm);
+        messageListForm.pack();
+        messageListForm.setVisible(true);
+    }//GEN-LAST:event_messageListMenuActionPerformed
+
+    private void messageMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messageMenuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_messageMenuActionPerformed
 
     public void contactUpdateMenuActionPerformed(Contact contact) {
         ContactUpdateForm contactUpdateForm = new ContactUpdateForm(contact);
@@ -160,15 +189,15 @@ public class MainDesktop extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem aboutMenuItem;
     private javax.swing.JMenuItem contactAddMenu;
     private javax.swing.JMenuItem contactListMenu;
     private javax.swing.JMenu contactsMenu;
-    private javax.swing.JMenuItem contentMenuItem;
     private javax.swing.JDesktopPane desktopPane;
-    private javax.swing.JMenu helpMenu;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar menuBar;
+    private javax.swing.JMenuItem messageListMenu;
+    private javax.swing.JMenu messageMenu;
+    private javax.swing.JMenuItem messageSendMenu;
     // End of variables declaration//GEN-END:variables
 
 }
