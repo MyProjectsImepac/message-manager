@@ -26,6 +26,7 @@ SET time_zone = "+00:00";
 --
 -- Estrutura da tabela `contacts`
 --
+USE `message-manager`;
 
 DROP TABLE IF EXISTS `contacts`;
 CREATE TABLE IF NOT EXISTS `contacts` (
