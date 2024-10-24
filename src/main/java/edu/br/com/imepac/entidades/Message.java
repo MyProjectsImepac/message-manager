@@ -1,4 +1,4 @@
-package entidades;
+package edu.br.com.imepac.entidades;
 
 public class Message {
     private long id;

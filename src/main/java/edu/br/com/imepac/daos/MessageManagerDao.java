@@ -1,6 +1,6 @@
 package edu.br.com.imepac.daos;
 
-import entidades.Message;
+import edu.br.com.imepac.entidades.Message;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

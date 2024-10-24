@@ -1,7 +1,7 @@
 package edu.br.com.imepac.screens.messages;
 
 import edu.br.com.imepac.daos.MessageManagerDao;
-import entidades.Message;
+import edu.br.com.imepac.entidades.Message;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;

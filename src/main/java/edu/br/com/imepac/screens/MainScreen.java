@@ -21,7 +21,7 @@ public class MainScreen extends JFrame {
         // Configura a tela principal para ocupar todo o espaço da área de trabalho
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setTitle("Main Screen");
+        setTitle("Gerenciador de mensagens");
 
         // Cria o JDesktopPane
         desktopPane = new JDesktopPane();

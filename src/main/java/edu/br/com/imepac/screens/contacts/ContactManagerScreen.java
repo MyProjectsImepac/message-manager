@@ -1,7 +1,7 @@
 package edu.br.com.imepac.screens.contacts;
 
 import edu.br.com.imepac.daos.ContactDao;
-import entidades.Contact;
+import edu.br.com.imepac.entidades.Contact;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
