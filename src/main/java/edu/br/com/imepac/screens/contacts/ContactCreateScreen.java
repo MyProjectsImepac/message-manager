@@ -129,7 +129,7 @@ public class ContactCreateScreen extends JInternalFrame {
         // Implementar lógica de salvamento do contato
         String name = nameField.getText();
         String email = emailField.getText();
-        Date birthDate = Date.valueOf(birthDateField.getText());
+        Date birthDate = (birthDateField.getText().isEmpty()) ? null : Date.valueOf(birthDateField.getText());
 
         Contact contact = new Contact();
         contact.setName(name);
