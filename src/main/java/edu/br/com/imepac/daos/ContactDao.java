@@ -12,7 +12,7 @@ import java.util.List;
 public class ContactDao extends GenericDao {
 
     public void save(Contact contact) {
-        String sql = "INSERT INTO contacts (name, email,birthDate) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO contacts (name, email,birth_date) VALUES (?, ?, ?)";
         try {
             Connection conn = getConnection();
             PreparedStatement stmt = conn.prepareStatement(sql);
@@ -39,7 +39,7 @@ public class ContactDao extends GenericDao {
                 contact.setId(rs.getInt("id"));
                 contact.setName(rs.getString("name"));
                 contact.setEmail(rs.getString("email"));
-                contact.setBirthDate(rs.getDate("birthDate"));
+                contact.setBirthDate(rs.getDate("birth_date"));
                 // Adicione outros campos conforme necessário
                 contacts.add(contact);
             }
@@ -68,7 +68,7 @@ public class ContactDao extends GenericDao {
     }
 
     public void update(Contact contact) {
-        String sql = "UPDATE contacts SET name = ?, email = ?, birthDate = ? WHERE id = ?";
+        String sql = "UPDATE contacts SET name = ?, email = ?, birth_date = ? WHERE id = ?";
         try {
             Connection conn = getConnection();
             PreparedStatement stmt = conn.prepareStatement(sql);
@@ -97,7 +97,7 @@ public class ContactDao extends GenericDao {
                 contact.setId(rs.getInt("id"));
                 contact.setName(rs.getString("name"));
                 contact.setEmail(rs.getString("email"));
-                contact.setBirthDate(rs.getDate("birthDate"));
+                contact.setBirthDate(rs.getDate("birth_date"));
                 // Adicione outros campos conforme necessário
             }
 

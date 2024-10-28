@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `contacts` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(150) CHARACTER SET utf16 COLLATE utf16_swedish_ci NOT NULL,
   `email` varchar(150) CHARACTER SET utf16 COLLATE utf16_swedish_ci NOT NULL,
-  `birthDate` date DEFAULT NULL,
+  `birth_date` date DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf16 COLLATE=utf16_swedish_ci;
 
